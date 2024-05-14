@@ -1,0 +1,33 @@
+#swal2-html-container {
+    font-size: 12px;
+    color: #232221;
+    font-weight: 600;
+}
+
+.swal2-btn-sm {
+    border: none;
+    outline: none;
+    padding: 0;
+    margin: 0;
+    background: linear-gradient(
+        74.67deg,
+        #8a8328 3.23%,
+        rgba(138, 131, 40, 0) 367.48%
+    );
+    box-shadow: 0px 0px 1.8700000047683716px 0px #c2c2c2;
+    color: white;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+    padding: 5px 10px;
+    font-weight: 400;
+    font-size: 12px;
+}
+
+.swal2-toast {
+    font-size: 12px;
+    padding: 10px 16px;
+    border-radius: 4px;
+    width: auto;
+    max-width: 300px; /* Adjust as needed */
+}

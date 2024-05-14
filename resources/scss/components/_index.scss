@@ -1,0 +1,30 @@
+@use "./login";
+@use "./sidebar";
+
+@use "./header_search";
+
+@use "./add-btn";
+
+@use "./product_list_view";
+@use "./product_gallery_view";
+
+@use "./discounts";
+
+@use "./brands";
+
+@use "./profile";
+
+@use "./add_edit_product";
+@use "./add_edit_discount";
+@use "./add_edit_brand";
+
+@use "./modal";
+
+@use "./multiple_select";
+@use "./sweetalert";
+@use "./falling-loader";
+
+@use "./paginator";
+
+@use "./forgot_password";
+@use "./reset_password";

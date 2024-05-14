@@ -1,0 +1,29 @@
+@use "../abstracts/variables" as var;
+@use "../abstracts/mixins" as mix;
+@use "sass:math";
+
+.row {
+    &.add {
+        font-size: math.div(var.$gutter-base, 2.5);
+        font-weight: 500;
+        color: var.$text-color-tertiary;
+        div {
+            gap: math.div(var.$gutter-base, 3.75);
+            i {
+                &.add-btn {
+                    padding: math.div(var.$gutter-base, 5);
+                    color: var.$text-color-quaternary;
+                    font-size: math.div(var.$gutter-base, 1.666);
+                    box-shadow: 0px 0px math.div(var.$gutter-base, 16) 0px
+                        var.$text-color-quinary;
+                    border-radius: math.div(var.$gutter-base, 3.75);
+                    background: linear-gradient(
+                        74.67deg,
+                        var.$background-color-tertiary 3.23%,
+                        var.$background-color-quaternary 367.48%
+                    );
+                }
+            }
+        }
+    }
+}

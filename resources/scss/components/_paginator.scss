@@ -1,0 +1,55 @@
+@use "../abstracts/variables" as var;
+@use "../abstracts/mixins" as mix;
+@use "sass:math";
+
+nav {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    .pagination {
+        background-color: transparent;
+        font-family: "Cormorant Garamond", serif;
+        margin-bottom: 0;
+        width: max-content;
+        li {
+            &:not(:first-child, :last-child, :nth-last-child(2)) {
+                &::after {
+                    content: "";
+                    position: absolute;
+                    width: 5px;
+                    height: 5px;
+                    display: inline-block;
+                    background-color: #232221;
+                    border-radius: 50%;
+                    top: 50%;
+                    right: -5px;
+                    transform: translate(-50%, 0);
+                    line-height: 5px;
+                    text-align: center;
+                }
+            }
+            position: relative;
+            &.page-item {
+                .page-link {
+                    padding: 0 10px;
+                    font-size: 25px;
+                    background-color: transparent;
+                    border: none;
+                    color: #232221;
+                    box-shadow: none;
+                }
+                &.active {
+                    .page-link {
+                        color: red;
+                    }
+                }
+            }
+            &[aria-label="« Previous"] {
+                & > span {
+                    background-color: transparent;
+                }
+            }
+        }
+    }
+}

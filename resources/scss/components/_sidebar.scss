@@ -1,0 +1,140 @@
+@use "../abstracts/variables" as var;
+@use "../abstracts/mixins" as mix;
+@use "sass:math";
+
+#sidebar {
+    width: var.$gutter-base * 3.2;
+    min-width: var.$gutter-base * 3.2;
+    z-index: 2;
+    transition: all 0.25s ease-in-out;
+
+    &.expand {
+        width: 100%;
+        min-width: 100%;
+        @include mix.tablet-styles {
+            width: 40%;
+            min-width: 40%;
+        }
+        @include mix.laptop-m-styles {
+            width: 30%;
+            min-width: 30%;
+        }
+        @include mix.laptop-l-styles {
+            width: 20%;
+            min-width: 20%;
+        }
+    }
+
+    &:not(.expand) {
+        .user-info,
+        a.sidebar-link span {
+            display: none;
+        }
+        #close-sidebar-btn {
+            display: none;
+        }
+    }
+
+    .inner {
+        height: 100vh;
+        @extend %padding-24;
+        .toggle-btn {
+            background-color: transparent;
+            cursor: pointer;
+            border: 0;
+            margin-right: math.div(var.$gutter-base, 2);
+            img {
+                width: var.$gutter-base * 1.6;
+                height: var.$gutter-base * 1.6;
+                border-radius: 50%;
+            }
+        }
+
+        .user-info {
+            margin: auto 0;
+            div {
+                &:nth-child(1) {
+                    color: var.$text-color-primary;
+                    font-weight: var.$font-weight-medium-bold;
+                }
+                &:nth-child(2) {
+                    font-size: math.div(var.$gutter-base, 2.66);
+                }
+            }
+        }
+
+        #close-sidebar-btn {
+            position: absolute;
+            right: 0;
+            font-size: math.div(var.$gutter-base, 1.2);
+            cursor: pointer;
+        }
+
+        .sidebar-nav {
+            padding: (var.$gutter-base * 1.16) 0;
+            flex: 1 1 auto;
+            .sidebar-item {
+                position: relative;
+                margin-bottom: math.div(var.$gutter-base, 3.75);
+            }
+        }
+
+        a {
+            &.sidebar-link {
+                border-radius: math.div(var.$gutter-base, 3.75);
+                display: flex;
+                color: var.$text-color-base;
+                align-items: center;
+                white-space: nowrap;
+                padding: math.div(var.$gutter-base, 3)
+                    math.div(var.$gutter-base, 2.7);
+                font-weight: var.$font-weight-medium-bold;
+                font-size: math.div(var.$gutter-base, 2);
+                &.active {
+                    color: var.$text-color-primary;
+                    background-color: var.$background-color-primary;
+                }
+                &:hover {
+                    background-color: var.$background-color-primary;
+                }
+                i {
+                    font-size: math.div(var.$gutter-base, 1.1);
+                    margin-right: math.div(var.$gutter-base, 2.5);
+                }
+            }
+        }
+
+        .sidebar-footer {
+            border-top: math.div(var.$gutter-base, 15) solid rgba(241, 241, 241);
+            button {
+                &[type="submit"] {
+                    outline: none;
+                    border: none;
+                    padding: 0;
+                    margin: 0;
+                    background-color: transparent;
+                    a {
+                        &.sidebar-link {
+                            padding: math.div(var.$gutter-base, 3) 0px;
+                            color: var.$text-color-primary;
+                            font-weight: 500;
+                            margin: 0;
+                            padding-bottom: 0;
+                            &:hover {
+                                background-color: unset;
+                            }
+                            .logout {
+                                padding: math.div(var.$gutter-base, 3);
+                                border: math.div(var.$gutter-base, 10) solid
+                                    rgb(241, 241, 241);
+                                border-radius: 50%;
+                                transition: 0.3s ease;
+                                font-size: 24px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

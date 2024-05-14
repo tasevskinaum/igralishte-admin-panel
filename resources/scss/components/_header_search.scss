@@ -1,0 +1,80 @@
+@use "../abstracts/variables" as var;
+@use "../abstracts/mixins" as mix;
+@use "sass:math";
+
+#search-row {
+    height: var.$gutter-base * 1.6;
+    & > div {
+        &:first-child {
+            & > div {
+                &:first-child {
+                    width: 100%;
+                }
+            }
+            i {
+                cursor: pointer;
+                &.bx-chevron-down {
+                    font-size: math.div(var.$gutter-base, 1.5);
+                    align-self: self-start;
+                }
+                &:not(.bx-chevron-down) {
+                    color: var.$text-color-primary;
+                }
+            }
+            & > i {
+                border: math.div(var.$gutter-base, 30) solid
+                    var.$text-color-quinary;
+                box-shadow: 0px 0px math.div(var.$gutter-base, 30) 0px
+                    var.$text-color-quinary;
+                border-radius: math.div(var.$gutter-base, 5);
+                padding: math.div(var.$gutter-base, 7.5);
+                font-size: math.div(var.$gutter-base, 2.3);
+                &.active {
+                    background-color: var.$background-color-primary;
+                }
+                &:hover {
+                    background-color: var.$background-color-primary;
+                }
+            }
+            &:first-child {
+                display: flex;
+                align-items: center;
+                padding: 0;
+                gap: math.div(var.$gutter-base, 3);
+                & > div {
+                    &:first-child {
+                        border: math.div(var.$gutter-base, 30) solid
+                            var.$text-color-quinary;
+                        border-radius: math.div(var.$gutter-base, 5);
+                        box-shadow: 0px 0px math.div(var.$gutter-base, 15) 0px
+                            var.$text-color-quinary;
+                        padding: math.div(var.$gutter-base, 7.5);
+                        form {
+                            & > button[type="submit"] {
+                                background-color: transparent;
+                                border: 0;
+                                outline: none;
+                                padding: 0;
+                                margin: 0;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    input {
+        &#search {
+            background-color: transparent;
+            width: 100%;
+            border: none;
+            outline: none;
+            font-size: math.div(var.$gutter-base, 2.5);
+            font-weight: 500;
+            padding: math.div(var.$gutter-base, 10)
+                math.div(var.$gutter-base, 1.875);
+            color: var.$text-color-quinary;
+        }
+    }
+}

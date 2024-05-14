@@ -1,0 +1,102 @@
+@use "../abstracts/variables" as var;
+@use "../abstracts/mixins" as mix;
+@use "sass:math";
+
+#products {
+    .row {
+        &.products {
+            #product-gallery-view {
+                display: none;
+                font-family: "Cormorant Garamond", serif;
+                &.active {
+                    display: block;
+                }
+                .product {
+                    margin-bottom: math.div(var.$gutter-base, 1.875);
+                    color: var.$text-color-tertiary;
+                    padding: math.div(var.$gutter-base, 3)
+                        math.div(var.$gutter-base, 1.875);
+                    box-shadow: 0px 0px math.div(var.$gutter-base, 19) 0px
+                        var.$background-color-septenary;
+                    border-radius: math.div(var.$gutter-base, 5);
+                    background-color: var.$background-color-senary;
+                    font-size: math.div(var.$gutter-base, 2.5);
+                    .header {
+                        margin-bottom: math.div(var.$gutter-base, 5);
+                        & > span {
+                            &:nth-child(2) {
+                                font-family: "Jost", sans-serif;
+                            }
+                        }
+                    }
+                    .main {
+                        margin-bottom: math.div(var.$gutter-base, 3.333);
+                        .carousel.slide {
+                            .carousel-item {
+                                border-radius: math.div(var.$gutter-base, 3.75);
+                                overflow: hidden;
+                                img {
+                                    height: 190px;
+                                    width: 100%;
+                                }
+                            }
+                            .carousel-control-prev-icon,
+                            .carousel-control-next-icon {
+                                width: math.div(var.$gutter-base, 2);
+                                height: math.div(var.$gutter-base, 2);
+                                background-color: var.$background-color-octonary;
+                                border-radius: 50%;
+                            }
+                        }
+                    }
+                    .footer {
+                        .product-name.product-code {
+                            margin-bottom: math.div(var.$gutter-base, 3.75);
+                            .name {
+                                color: var.$text-color-primary;
+                                font-size: math.div(var.$gutter-base, 1.875);
+                            }
+                            .code {
+                                font-family: "Inter", sans-serif;
+                                font-weight: 700;
+                                color: var.$background-color-tertiary;
+                            }
+                        }
+                        .colors {
+                            font-weight: 500;
+                            margin-bottom: math.div(var.$gutter-base, 15);
+                            & > span {
+                                &.color {
+                                    display: inline-block;
+                                    width: math.div(var.$gutter-base, 3.75);
+                                    height: math.div(var.$gutter-base, 3.75);
+                                    border-radius: math.div(
+                                        var.$gutter-base,
+                                        15
+                                    );
+                                }
+                            }
+                        }
+                        .sizes.price {
+                            font-weight: 500;
+                            .size {
+                                & > span {
+                                    color: var.$text-color-primary;
+                                }
+                            }
+                            .price {
+                                & > span {
+                                    font-size: math.div(
+                                        var.$gutter-base,
+                                        1.875
+                                    );
+                                    color: var.$text-color-primary;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

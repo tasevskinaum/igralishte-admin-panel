@@ -1,0 +1,169 @@
+@use "../abstracts/variables" as var;
+@use "../abstracts/mixins" as mix;
+@use "sass:math";
+
+#discount-add,
+#discount-edit {
+    padding: 24px 30px 40px 30px;
+    min-height: 100vh;
+    & > div {
+        width: 100%;
+        position: relative;
+        .row {
+            &.header {
+                margin-bottom: 30px;
+                .go-back-arrow {
+                    margin-right: 16px;
+
+                    i {
+                        &.bx-arrow-back {
+                            font-size: 28px;
+                            color: #232221;
+                        }
+                    }
+                }
+                .title {
+                    font-weight: 600;
+                    font-size: 12px;
+                    color: #232221;
+                }
+            }
+
+            &.product-form {
+                padding-bottom: 50px;
+                form {
+                    & > div {
+                        &:not(:last-child) {
+                            margin-bottom: 16px;
+                        }
+                        label {
+                            font-weight: 500;
+                            font-size: 12px;
+                            color: #000000;
+                            margin-bottom: 8px;
+                            display: block;
+                        }
+
+                        input,
+                        textarea {
+                            width: 100%;
+                            border: 1px solid #a9a9a9;
+                            outline: none;
+                            border-radius: math.div(var.$gutter-base, 3.75);
+                            padding: math.div(var.$gutter-base, 3) 12px;
+                            background-color: transparent;
+                            font-size: 12px;
+                            color: #666560;
+                            &[name="maintenance_guidelines"] {
+                                font-weight: 500;
+                            }
+                        }
+
+                        & > span {
+                            &.error-fdb {
+                                color: red;
+                                font-size: 10px;
+                                display: block;
+                                font-style: italic;
+                            }
+                        }
+
+                        & > select {
+                            &#category {
+                                font-size: 12px;
+                                font-weight: 500;
+                                color: #c2c2c2;
+                                width: 100px;
+                                padding: 8px 32px 8px 16px;
+                                -webkit-appearance: none;
+                                appearance: none;
+                                background: white
+                                    url("data:image/svg+xml;utf8,<svg viewBox='0 0 140 140' width='15' height='15' xmlns='http://www.w3.org/2000/svg'><g><path d='m121.3,34.6c-1.6-1.6-4.2-1.6-5.8,0l-51,51.1-51.1-51.1c-1.6-1.6-4.2-1.6-5.8,0-1.6,1.6-1.6,4.2 0,5.8l53.9,53.9c0.8,0.8 1.8,1.2 2.9,1.2 1,0 2.1-0.4 2.9-1.2l53.9-53.9c1.7-1.6 1.7-4.2 0.1-5.8z' fill='grey'/></g></svg>")
+                                    no-repeat;
+                                background-position: right 10px top 50%;
+                                border: 0.62px solid #c2c2c2;
+                                box-shadow: 0px 0px 1.872483253479004px 0px
+                                    #c2c2c2;
+                                border-radius: 7px;
+                                cursor: pointer;
+                                option {
+                                    font-weight: 600;
+                                    color: #232221;
+                                }
+                            }
+                        }
+
+                        &#status-container {
+                            display: inline-block;
+                            position: absolute;
+                            top: 0;
+                            right: 0;
+                            margin: 0;
+                            text-align: right;
+                            & > select {
+                                &#status {
+                                    font-size: 12px;
+                                    font-weight: 500;
+                                    color: #232221;
+                                    width: 100px;
+                                    padding: 8px 32px 8px 16px;
+                                    -webkit-appearance: none;
+                                    appearance: none;
+                                    background: white
+                                        url("data:image/svg+xml;utf8,<svg viewBox='0 0 140 140' width='15' height='15' xmlns='http://www.w3.org/2000/svg'><g><path d='m121.3,34.6c-1.6-1.6-4.2-1.6-5.8,0l-51,51.1-51.1-51.1c-1.6-1.6-4.2-1.6-5.8,0-1.6,1.6-1.6,4.2 0,5.8l53.9,53.9c0.8,0.8 1.8,1.2 2.9,1.2 1,0 2.1-0.4 2.9-1.2l53.9-53.9c1.7-1.6 1.7-4.2 0.1-5.8z' fill='grey'/></g></svg>")
+                                        no-repeat;
+                                    background-position: right 10px top 50%;
+                                    border: 0.62px solid #c2c2c2;
+                                    box-shadow: 0px 0px 1.872483253479004px 0px
+                                        #c2c2c2;
+                                    border-radius: 7px;
+                                    cursor: pointer;
+                                    option {
+                                        font-weight: 600;
+                                    }
+                                }
+                            }
+                        }
+
+                        & > div {
+                            &.footer {
+                                gap: 20px;
+                                position: absolute;
+                                width: 100%;
+                                bottom: 0;
+                                button {
+                                    &[type="submit"] {
+                                        flex-basis: 80%;
+                                        background-color: var.$text-color-primary;
+                                        color: var.$text-color-quaternary;
+                                        border-radius: math.div(
+                                            var.$gutter-base,
+                                            3
+                                        );
+                                        border: math.div(var.$gutter-base, 30)
+                                            solid var.$text-color-primary;
+                                        padding: math.div(var.$gutter-base, 4);
+                                        width: 100%;
+                                        font-size: math.div(
+                                            var.$gutter-base,
+                                            2
+                                        );
+                                        font-weight: 700;
+                                    }
+                                }
+                                & > a {
+                                    flex-basis: 20%;
+                                    text-align: center;
+                                    color: #232221;
+                                    font-weight: 500;
+                                    font-size: 12px;
+                                    text-decoration: underline;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

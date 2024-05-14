@@ -1,0 +1,66 @@
+@use "../abstracts/variables" as var;
+@use "../abstracts/mixins" as mix;
+@use "sass:math";
+
+.login-page {
+    @extend %padding-24;
+    height: 100vh;
+    background: linear-gradient(
+        180deg,
+        var.$background-color-primary 0.05%,
+        var.$background-color-senary 93.1%,
+        var.$background-color-senary 110.6%,
+        var.$background-color-tertiary 152.03%
+    );
+
+    color: var.$text-color-primary;
+    .inner {
+        padding: var.$gutter-base * 3.333 0px;
+        form {
+            font-size: math.div(var.$gutter-base, 2.5);
+            label {
+                display: block;
+                font-weight: 500;
+            }
+            input {
+                width: 100%;
+                border: math.div(var.$gutter-base, 30) solid
+                    var.$background-color-quinary;
+                outline: none;
+                border-radius: math.div(var.$gutter-base, 3.75);
+                padding: math.div(var.$gutter-base, 3);
+                background-color: transparent;
+            }
+            button[type="submit"] {
+                background-color: var.$text-color-primary;
+                color: var.$text-color-quaternary;
+                border-radius: math.div(var.$gutter-base, 3);
+                border: math.div(var.$gutter-base, 30) solid
+                    var.$text-color-primary;
+                padding: math.div(var.$gutter-base, 4);
+                width: 100%;
+                font-size: math.div(var.$gutter-base, 2);
+                font-weight: 700;
+            }
+
+            a {
+                &.forgot-password {
+                    text-decoration: underline;
+                    color: var.$text-color-secondary;
+                }
+            }
+
+            div {
+                &.fdb {
+                    color: rgba(255, 0, 0, 0.829);
+                    font-size: math.div(var.$gutter-base, 3);
+                }
+            }
+        }
+        .footer {
+            width: 100%;
+            font-size: math.div(var.$gutter-base, 3.75);
+            font-weight: 500;
+        }
+    }
+}
