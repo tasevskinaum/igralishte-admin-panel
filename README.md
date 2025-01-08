@@ -12,7 +12,7 @@ https://docs.google.com/document/d/1aQYmKKQDsZFGZ3bm9wA0PTlGkn9q4YTEI6rK8DJktTs/
 
 ## FIGMA
 
-https://www.figma.com/file/LInMZcQLDdqHDUqzvn9PQn/Tijana-Cresenzi---Igralishte---Figma-file?type=design&mode=design
+https://www.figma.com/design/LInMZcQLDdqHDUqzvn9PQn/Tijana-Cresenzi---Igralishte---Figma-file?node-id=8-85&p=f
 
 ## API Documentation
 
